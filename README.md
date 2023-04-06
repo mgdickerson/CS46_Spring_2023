@@ -1,6 +1,6 @@
-# ICS 45C: Spring 2023
+# ICS 46: Spring 2023
 
-Welcome to ICS 45C! This GitHub project will contain all of the project setup material you need for this
+Welcome to ICS 46! This GitHub project will contain all of the project setup material you need for this
 class. This `main` branch will explain all the instructions you need to copy this code to your computer
 (or OpenLab), how modify the files you need to for the assignment, how to build/test your code, and
 finally how to submit! If you want any further in depth instructions on any of the more advanced topics
@@ -41,7 +41,7 @@ not to use `GitHub`, skip to the [Manual](#manual) section.
     └── main.cpp
 ```
 
-All assignments for 45C: Spring 2023 should follow the directory structure as shown above and in
+All assignments for 46: Spring 2023 should follow the directory structure as shown above and in
 this template directory. The easiest way to ensure that your project has the correct structure is
 to fork this repository and to use it for writing your code. Instructions for doing this are found
 in the [GitHub section below](#github). Each homework will include all of the files you will need
@@ -77,7 +77,7 @@ it to `GitHub`, you can do that by following
 
 Once you have set up your `username`, `email`, and `ssh key`, you will need to create a private
 [repository](https://docs.github.com/en/get-started/quickstart/create-a-repo) using your new account!
-Your new repository should be named something like `ICS45C`.
+Your new repository should be named something like `ICS46`.
 
 WARNING: MAKE SURE THAT YOU SET THE REPOSITORY TO PRIVATE! If your repository is not private, others
 can see it and will be able to cheat off of your homework and it could end up being an academic
@@ -91,27 +91,27 @@ using `git clone` and copy-pasting the URL you got from the green `Code` button 
 And then in the terminal, type:
 
 ```bash
-git clone https://github.com/mgdickerson/CS45C_Spring_2023.git
+git clone https://github.com/mgdickerson/CS46_Spring_2023.git
 ```
 
-This will add the folder `CS45C_Spring_2023` to your current working directory, which you can see by
+This will add the folder `CS46_Spring_2023` to your current working directory, which you can see by
 typing the `ls` command. After cloning our public repository, you are going to mirror it to your own
 `private` respository using the following steps:
 
 ```bash
-# Move into the CS45C_Spring_2023 Folder.
-cd CS45C_Spring_2023
+# Move into the CS46_Spring_2023 Folder.
+cd CS46_Spring_2023
 
 # Push a mirror (or a copy) of this folder to your private repo:
 git push --mirror git@github.com:<YourGithubUserName>/<YourPrivateProjectName>.git
 # As an example, if you used our naming advice above (and your GitHub ID was RayKlefstad), your command would be:
-# git push --mirror git@github.com:RayKlefstad/ICS45C.git
+# git push --mirror git@github.com:RayKlefstad/ICS46.git
 
 # Move back out of the directory
 cd ..
 
 # Remove the public repository
-rm -rf CS45C_Spring_2023
+rm -rf CS46_Spring_2023
 
 # Clone your private repository
 git clone git@github.com:<YourGithubUserName>/<YourPrivateProjectName>.git
@@ -126,7 +126,7 @@ so it is not important that you understand this step yet, but very important tha
 cd <YourPrivateRepoName>
 
 # Add our public repository as a remote source:
-git remote add public https://github.com/mgdickerson/CS45C_Spring_2023.git
+git remote add public https://github.com/mgdickerson/CS46_Spring_2023.git
 ```
 
 With that completed, now you can get to work on a specific homework! To do this, you will need to `checkout`
@@ -213,7 +213,7 @@ To build and run your program, you will need to open a terminal and move into th
 project in it. For example:
 
 ```bash
-cd <YourProjectName>    # So if we had the project in a folder named Projects: cd Projects/CS45C-Template
+cd <YourProjectName>    # So if we had the project in a folder named Projects: cd Projects/CS46-Template
 ```
 
 Once you are in the project folder, use the following commands to build and then run your project:
