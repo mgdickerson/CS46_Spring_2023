@@ -160,6 +160,11 @@ project changes into the online storage at `GitHub` and make it visible and copy
 working with.
 
 ```bash
+# The first time you commit this branch, it is highly likely you will need to
+# set the up-stream for your private repository:
+git push --set-upstream origin hw0
+
+# Every change after that you can simply use:
 git push
 ```
 
