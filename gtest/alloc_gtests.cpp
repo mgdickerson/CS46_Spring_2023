@@ -1,4 +1,4 @@
-// ------------------------- Tests File - test.cpp -------------------------- //
+// ----------------------- Tests File - alloc_test.cpp ----------------------- //
 // This file is for writing your own user tests. Be sure to include your *.h
 // files to be able to access the functions that you wrote for unit testing.
 // An example has been provided, but more documentation is available here:
@@ -6,13 +6,13 @@
 // -------------------------------------------------------------------------- //
 
 // Include all of your *.h files you want to unit test:
-
+#include "alloc.h"
 
 #include <gtest/gtest.h>
 
 namespace {
 
-TEST(Hello, World) {
+TEST(Alloc, True) {
   EXPECT_TRUE(true);
 }
 
@@ -20,3 +20,4 @@ TEST(Hello, World) {
 
 
 } // anonymous namespace
+

@@ -26,6 +26,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # WARNING: DO NOT INCLUDE MAIN! We will add the main.cpp
 # file in the executable command.
 set(SRC_FILES_EXCEPT_MAIN
+  src/alloc.h
+  src/alloc.cpp
+  src/string.h
+  src/string.cpp
 )
 
 # Set up a project with a name and C++ as the language:
@@ -44,17 +48,40 @@ add_executable(${PROJECT_NAME} ${SRC_FILES_EXCEPT_MAIN} src/main.cpp)
 # for this to build.
 find_package(GTest)
 if (GTest_FOUND)
-    project(hw_gtests CXX)
+    project(alloc_gtests CXX)
 
     # If you add other test files, be sure to add them to
     # this list!
-    set(GTEST_FILES
+    set(ALLOC_GTEST_FILES
         gtest/gtestmain.cpp
-        gtest/hw_gtests.cpp
+        gtest/alloc_gtests.cpp
+        src/alloc.h
+        src/alloc.cpp
     )
 
     include_directories(${GTEST_INCLUDE_DIRS})
-    add_executable(${PROJECT_NAME} ${SRC_FILES_EXCEPT_MAIN} ${GTEST_FILES})
+    add_executable(${PROJECT_NAME} ${ALLOC_GTEST_FILES})
+    # This ensures that the cpp files in gtest/ can include headers from
+    # src/ simply by doing
+    #     #include "foo.h"
+    # instead of having to write the cumbersome
+    #     #include "../src/foo.h"
+    target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/src)
+    target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES})
+
+    project(string_gtests CXX)
+
+    # If you add other test files, be sure to add them to
+    # this list!
+    set(STRING_GTEST_FILES
+        gtest/gtestmain.cpp
+        gtest/alloc_gtests.cpp
+        src/string.h
+        src/string.cpp
+    )
+
+    include_directories(${GTEST_INCLUDE_DIRS})
+    add_executable(${PROJECT_NAME} ${STRING_GTEST_FILES})
     # This ensures that the cpp files in gtest/ can include headers from
     # src/ simply by doing
     #     #include "foo.h"
