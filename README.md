@@ -127,6 +127,11 @@ cd <YourPrivateRepoName>
 
 # Add our public repository as a remote source:
 git remote add public https://github.com/mgdickerson/CS46_Spring_2023.git
+
+# WARNING: This instruction was just added and is very important:
+# This instruction will copy all branches and updates from this `public` repository and is
+# required for `git checkout hw0` to work.
+git fetch public
 ```
 
 With that completed, now you can get to work on a specific homework! To do this, you will need to `checkout`
