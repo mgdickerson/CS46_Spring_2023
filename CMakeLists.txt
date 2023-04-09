@@ -76,6 +76,8 @@ if (GTest_FOUND)
     set(STRING_GTEST_FILES
         gtest/gtestmain.cpp
         gtest/alloc_gtests.cpp
+        src/Alloc.h
+        src/Alloc.cpp
         src/String.h
         src/String.cpp
     )
