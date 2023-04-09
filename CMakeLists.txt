@@ -26,10 +26,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # WARNING: DO NOT INCLUDE MAIN! We will add the main.cpp
 # file in the executable command.
 set(SRC_FILES_EXCEPT_MAIN
-  src/alloc.h
-  src/alloc.cpp
-  src/string.h
-  src/string.cpp
+  src/Alloc.h
+  src/Alloc.cpp
+  src/String.h
+  src/String.cpp
 )
 
 # Set up a project with a name and C++ as the language:
@@ -55,8 +55,8 @@ if (GTest_FOUND)
     set(ALLOC_GTEST_FILES
         gtest/gtestmain.cpp
         gtest/alloc_gtests.cpp
-        src/alloc.h
-        src/alloc.cpp
+        src/Alloc.h
+        src/Alloc.cpp
     )
 
     include_directories(${GTEST_INCLUDE_DIRS})
@@ -76,8 +76,8 @@ if (GTest_FOUND)
     set(STRING_GTEST_FILES
         gtest/gtestmain.cpp
         gtest/alloc_gtests.cpp
-        src/string.h
-        src/string.cpp
+        src/String.h
+        src/String.cpp
     )
 
     include_directories(${GTEST_INCLUDE_DIRS})

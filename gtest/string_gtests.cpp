@@ -5,10 +5,12 @@
 // https://github.com/google/googletest/blob/main/docs/primer.md
 // -------------------------------------------------------------------------- //
 
-// Include all of your *.h files you want to unit test:
-#include "string.h"
-
 #include <gtest/gtest.h>
+
+#include <iostream>
+using namespace std;
+// Include all of your *.h files you want to unit test:
+#include "String.h"
 
 namespace {
 

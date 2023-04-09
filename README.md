@@ -5,36 +5,31 @@ This repository will focus on instructions relevant to HW1. In this assignment, 
 
 ```bash
 main.cpp
-string.h
-string.cpp
-alloc.h
-alloc.cpp
+String.h
+String.cpp
+Alloc.h
+Alloc.cpp
 
 # If using GTest:
 string_gtests.cpp
 alloc_gtests.cpp
 ```
 
-To add this branch to your private repository, you can run the following steps inside your `private`
-repository folder:
-
-```bash
-# Grab any and all changes from the `public` repository we setup in the `main` branch instructions
-git fetch public
-
-# Check out the hw1 branch
-git checkout hw1
-
-# Add the `hw1` branch to your private repository on GitHub
-git push -u origin hw1
-```
-
-After running these commands, you will have a copy of the public `hw1` branch on your private repository
-and can make changes and push changes as you normally would.
+To add this branch to your private repository, follow the instructions under the
+[Getting Started](#getting-started) section.
 
 ### TLDR Build And Run:
 
 ```bash
+# Pull updates:
+git fetch public
+
+# Checkout hw1:
+git checkout hw1
+
+# Push to origin:
+git push -u origin hw1
+
 # Run CMake defaults and Build Generator commands
 cmake --preset default
 
@@ -57,46 +52,97 @@ cmake --build build --target alloc_gtests
 
 ## Getting Started
 
-If you are using `GitHub`, then getting started is easy! You will clone this repository, then
-checkout the `hw1` branch! If you have already `cloned` this project, then you can skip to
-the [Checkout](#checkout) instructions. If you plan to not use `GitHub` and still want to use
-our provided tests, follow the instructions under [Directory Structure](#directory-structure).
-If you want to manually make the individual files and not use our tests, then you can simply
-make a `main.cpp` file and skip ahead to the [Coding](#coding) section.
-
-### Clone
-
-On `Linux` and `Mac`, you can open a new terminal. On Windows you will open `Git BASH` which
-should have been installed following the instructions under the `main` branch. On OpenLab,
-you are already in a terminal! Next, you will want to copy the repository link as shown in
-the image below:
-
-![](docs/clone_link.png)
-
-And then in the terminal, type:
+If you are using `GitHub`, then it is likely you will have already cloned this repository!
+If you have not, or removed the folder for any reason, then you will need to clone your
+private repository first:
 
 ```bash
-git clone <LinkCopiedAbove>  # For example: git clone git@github.com:klefstad/CS46.git 
+# Clone your private repository
+git clone <YourPrivateRepositorySSHLink>
+
+# Change Directory into your project folder
+cd <PrivateProjectName>
 ```
 
-There should now be a folder named `CS46`. We will move into that directory using the
-command:
+Next, you will need to pull any changes and updates, so we are going to run a `fetch` command:
 
 ```bash
-cd CS46
+# Check that you have the `public` remote setup (it should list an `origin` and a `public`):
+git remote -v
+
+# If you do not find a `public` option on the above command, you will need to add it:
+git remote add public https://github.com/mgdickerson/CS45C_Spring_2023.git
+
+# Once you are sure that you have the remote tracking set up, you can run the fetch command:
+git fetch public
 ```
 
-Once inside the directory, we will `checkout` the `hw1` branch!
+If you have set up the `remote` repository `public` to track this GitHub project, then you
+should now see that `git` has pulled all the necessary changes!
 
 ### Checkout
 
-In the same terminal as before, you will type:
+Next, we will checkout the `hw1` branch. In the same terminal as before, you will type:
 
 ```bash
 git checkout hw1
 ```
 
-You are now in the `hw1` branch! You can now make changes to your code as shown in the [Coding](#coding)
+WARNING: It is possible that you already have a copy of the `hw1` branch for any reason. The easiest
+way to update to the new instructions is to delete your private repositories' copy of the branch and
+then re-checkout `hw1` and follow the rest of the instructions. (So if you see the, `multiple (2) remote
+tracking branches` error, this is likely what is happening to you):
+
+```bash
+# WARNING: The following commands will delete ALL changes you have made to the hw1 branch. If you have
+# important work saved there, be sure to copy it outside of the folder first!
+cd ../
+mkdir SavedWork
+cp <PrivateRepo>/src/* SavedWork/. (This will copy all files in the src folder)
+
+# Delete the hw1 branch locally
+git branch -D hw1
+
+# Delete the hw1 branch on your private repository on GitHub
+git push origin -d hw1
+
+# After deleting your outdated copy of the hw1 branch, run the checkout command again:
+git checkout hw1
+```
+
+NOTE: If you are very confident in `git`, you can also simply merge the changes, but there will be
+merge conflicts on the `CMakeLists.txt` file, so proceed with caution.
+
+You are now in the `hw1` branch! Now, we will want to add this branch to your private repository
+on `GitHub` and add tracking. To do this, we will run the command:
+
+```bash
+# Add the `hw1` branch to your private repository on GitHub
+git push -u origin hw1
+```
+
+The branch will now appear in your private repository on `GitHub.com`! This also sets up the
+branch to track with your private repository instead of the public one, so now simple push commands
+should send changes to the correct repository:
+
+```bash
+# Push changes to private repository
+git push
+```
+
+NOTE: AFTER you have done all the steps above, if you then clone this repository to a new folder or
+computer, it will now have multiple references to each `branch`. It is possible that when you run the
+`checkout` command, you will get an error such as: `multiple (2) remote tracking branches`. This happens
+because `git` is not sure which repository to pull it from, `origin` or `public`, so we will tell it
+which one to pull from, and set it to always prefer `origin` for this `branch`:
+
+```bash
+# Set the hw1 branch to track from "origin" (origin is your private repository)
+git checkout --track origin/hw1
+```
+
+This will checkout the `hw1` branch and set the preference for `origin`.
+You can now make changes to your code as shown in the [Coding](#coding)
 section below!
 
 ## Directory Structure
@@ -112,11 +158,11 @@ named `hw1` with the following structure:
 │   ├── alloc_gtests.cpp
 │   └── string_gtests.cpp
 └── src
-    ├── alloc.cpp
-    ├── alloc.h
+    ├── Alloc.cpp
+    ├── Alloc.h
     ├── main.cpp
-    ├── string.cpp
-    └── string.h
+    ├── String.cpp
+    └── String.h
 ```
 
 You should copy everything from the `CMakeLists.txt` and `CMakePresets.json` files into your own,
@@ -127,8 +173,7 @@ tests for this assignment. If you do not follow this structure, you will not be 
 ## Coding
 
 Starting from `hw1`, the details of the assignment itself will be covered in the homework documents
-not on this `GitHub` page. Instead, we will discuss hwo to test your `String` class either with `GTest`
-or manually in the `main` function.
+not on this `GitHub` page. Instead, we will discuss how to test your `String` class with `GTest`.
 
 ### String GTest:
 
@@ -143,10 +188,12 @@ Currently, the file should looks like the following:
 // https://github.com/google/googletest/blob/main/docs/primer.md
 // -------------------------------------------------------------------------- //
 
-// Include all of your *.h files you want to unit test:
-#include "string.h"
-
 #include <gtest/gtest.h>
+
+#include <iostream>
+using namespace std;
+// Include all of your *.h files you want to unit test:
+#include "String.h"
 
 namespace {
 
@@ -170,71 +217,33 @@ vim gtest/string_gtests.cpp
 nvim gtest/string_gtests.cpp
 ```
 
-As you can see in the file, it contains your `string.h` file you just made, and has
+As you can see in the file, it contains your `String.h` file you just made, and has
 a test for comparing the index of the letter `e` in the string `Test`. If the `String`
 class has been written correctly, that test should succeed,
-but just to be sure, lets add another test. This time, we want to test the index for
-the letter `s` is at postion `2`. We will add our test just below where it says `// ADD YOUR TEST HERE:`:
+but just to be sure, lets add another test. This time, we want to test `String` equality.
+We will add our test just below where it says `// ADD YOUR TEST HERE:`:
 
 ```cpp
-TEST(String, IndexOfS) {
+TEST(String, Equality) {
   String t{ "Test" };
-  EXPECT_EQ(2, t.indexOf("s"));
+  String e{ "Test" };
+  // Test String equality overload
+  EXPECT_TRUE(t == e);
+  // Double check each char matches
+  for (int i = 0; i < 4; ++i) {
+    EXPECT_EQ(t[i], e[i]);
+  }
 }
 ```
 
-This will add a test to the `String` set named `IndexOfS` and test that the values of
+This will add a test to the `String` set named `Equality` and test that the values of
 your function and the number provided are equal. You can either jump to
 [Build Instructions](#build-instructions) to test this or read about manual testing.
 
 ### String Main:
 
 If you are not using `GTest`, you can instead write your own tests using the `main.cpp` file
-we created above. You will need to modify the file, so first lets open the file with your
-preferred text editor:
-
-```bash
-nvim src/main.cpp
-```
-
-Now, we will need to `include` the file we just made (`string.h`). To do this,
-we will add a new `include` instruction under the one already in our `main.cpp`:
-
-```cpp
-#include <iostream>
-
-// Added string.h here:
-#include "string.h"
-```
-
-Next, we will want to try out converter on some values and print them out to make sure they
-make sense. We will do this by calling our function in the main, and printing the output
-to `cout`:
-
-```cpp
-int main() {
-  cout << "Hello World" << endl;
-
-  // Add your tests:
-  String s{"Test"};
-  cout << "String.indexOf(s) = " << s.indexOf("s") << endl;
-
-  return 0;
-}
-```
-
-This will call the function `indexOf` with the value `s`, and then
-print that value as shown in the format above. The output (after building and running)
-should look something like this:
-
-```bash
-Hello World
-String.indexOf(s) = 2
-```
-
-When you feel that you have successfully implemented the `String`,
-you can either check the `HW1` document for the remaining assignment problems, or move on to
-[Build Instructions](#build-instructions) to test your new `String`!
+we created above. For more information on this, reference the homework document. 
 
 ## Build Instructions
 
@@ -347,6 +356,6 @@ On `Gradescope`, press the `submit` button and it will bring up the following wi
 
 ![](docs/submit_files.png)
 
-Then you will drag and drop the `main.cpp`, `string.h`, `string.cpp`, `alloc.h`, and `alloc.cpp` files from your `src` folder
+Then you will drag and drop the `main.cpp`, `String.h`, `String.cpp`, `Alloc.h`, and `Alloc.cpp` files from your `src` folder
 (or wherever you have made this file) and press upload. As these are the only files we are changing, they
 should be the only files that you upload!
