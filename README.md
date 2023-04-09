@@ -152,7 +152,7 @@ named `hw1` with the following structure:
 
 ```bash
 ├── CMakeLists.txt
-├── CMakePresets.txt
+├── CMakePresets.json
 ├── gtest
 │   ├── gtestmain.cpp
 │   ├── alloc_gtests.cpp
