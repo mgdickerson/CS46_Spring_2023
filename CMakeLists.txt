@@ -75,7 +75,7 @@ if (GTest_FOUND)
     # this list!
     set(STRING_GTEST_FILES
         gtest/gtestmain.cpp
-        gtest/alloc_gtests.cpp
+        gtest/string_gtests.cpp
         src/Alloc.h
         src/Alloc.cpp
         src/String.h
