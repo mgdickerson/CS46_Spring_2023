@@ -18,8 +18,42 @@ using namespace std;
 
 namespace {
 
-TEST(UOList, True) {
+TEST(UOArrayList, Constructor) {
+  UnorderedArrayList UAL(1);
   EXPECT_TRUE(true);
+}
+
+TEST(UOArrayList, Insert) {
+  UnorderedArrayList UAL(1);
+  std::string s = "test";
+  UAL.insert(s);
+  EXPECT_TRUE(true);
+}
+
+TEST(UOArrayList, Find) {
+  UnorderedArrayList UAL(1);
+  std::string s = "test";
+  UAL.insert(s);
+  EXPECT_TRUE(UAL.find(s));
+}
+
+TEST(UOLinkedList, Constructor) {
+  UnorderedLinkedList ULL;
+  EXPECT_TRUE(true);
+}
+
+TEST(UOLinkedList, Insert) {
+  UnorderedLinkedList ULL;
+  std::string s = "test";
+  ULL.insert(s);
+  EXPECT_TRUE(true);
+}
+
+TEST(UOLinkedList, Find) {
+  UnorderedLinkedList ULL;
+  std::string s = "test";
+  ULL.insert(s);
+  EXPECT_TRUE(ULL.find(s));
 }
 
 // ADD YOUR TESTS HERE:
