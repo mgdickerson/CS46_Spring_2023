@@ -73,5 +73,5 @@ To run the above targets after compiling them:
 ## Submission
 
 As with previous submissions, you can either submit via `GitHub` by `git commit` and `git push`
-your changes to your private repository, and then submitting the `hw2` branch to `Gradescope`. Or,
+your changes to your private repository, and then submitting the `hw3` branch to `Gradescope`. Or,
 you can upload files directly, namely: `main.cpp`, `Timer.h`, `sorted_list.cpp`, and `sorted_list.h`.
