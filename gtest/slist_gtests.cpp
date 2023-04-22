@@ -14,46 +14,27 @@
 #include <iostream>
 using namespace std;
 // Include all of your *.h files you want to unit test:
-#include "unordered_list.h"
+#include "sorted_list.h"
 
 namespace {
 
-TEST(UOArrayList, Constructor) {
-  UnorderedArrayList UAL(1);
+TEST(SortedArrayList, Constructor) {
+  SortedArrayList SAL(1);
   EXPECT_TRUE(true);
 }
 
-TEST(UOArrayList, Insert) {
-  UnorderedArrayList UAL(1);
+TEST(SortedArrayList, Insert) {
+  SortedArrayList SAL(1);
   std::string s = "test";
-  UAL.insert(s);
+  SAL.insert(s);
   EXPECT_TRUE(true);
 }
 
-TEST(UOArrayList, Find) {
-  UnorderedArrayList UAL(1);
+TEST(SortedArrayList, Find) {
+  SortedArrayList SAL(1);
   std::string s = "test";
-  UAL.insert(s);
-  EXPECT_TRUE(UAL.find(s));
-}
-
-TEST(UOLinkedList, Constructor) {
-  UnorderedLinkedList ULL;
-  EXPECT_TRUE(true);
-}
-
-TEST(UOLinkedList, Insert) {
-  UnorderedLinkedList ULL;
-  std::string s = "test";
-  ULL.insert(s);
-  EXPECT_TRUE(true);
-}
-
-TEST(UOLinkedList, Find) {
-  UnorderedLinkedList ULL;
-  std::string s = "test";
-  ULL.insert(s);
-  EXPECT_TRUE(ULL.find(s));
+  SAL.insert(s);
+  EXPECT_TRUE(SAL.find(s));
 }
 
 // ADD YOUR TESTS HERE:

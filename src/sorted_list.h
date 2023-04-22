@@ -20,6 +20,8 @@ struct SortedList
     virtual ~SortedList() { }
 };
 
+ostream & operator << (ostream & out, SortedList & L);
+
 class SortedArrayList
     : public SortedList
 {
@@ -82,7 +84,6 @@ public:
         pointer operator->() const { return ptr; }
         reference operator[](difference_type const d) const { return ptr[d]; }
     };
-    // static_assert(std::random_access_iterator<iterator>);
     iterator begin() { return iterator{&buf[0]}; }
     iterator end() { return iterator{&buf[size]}; }
 
@@ -97,6 +98,8 @@ public:
     ~SortedArrayList();
 };
 
+// static_assert(std::random_access_iterator<SortedArrayList::iterator>);
+
 struct ListNode {
     string data;
     ListNode * next;
@@ -108,6 +111,7 @@ struct ListNode {
     static void delete_list(ListNode * L);
     static void remove(const string & word, ListNode * & L);
 };
+
 
 class SortedLinkedList 
     : public SortedList
@@ -124,21 +128,16 @@ public:
         using pointer = value_type*;
         using reference = value_type&;
         using difference_type = std::ptrdiff_t;
-        explicit iterator(ListNode * const ptr = nullptr) : current(ptr) {}
-        iterator & operator ++ () {current = current->next; return *this;}
-        iterator operator ++ (int) {
-            iterator copy{*this};
-            current = current->next;
-            return copy;
-        }
-        reference operator *() const {return current->data;}
-        pointer operator->() const {return &(current->data);}
-        bool operator == (iterator const & other) const {return current == other.current;}
-        bool operator != (iterator const & other) const {return current != other.current;}
+        explicit iterator(ListNode * const ptr = nullptr);
+        iterator & operator ++ ();
+        iterator operator ++ (int);
+        reference operator *() const;
+        pointer operator->() const;
+        bool operator == (iterator const & other) const;
+        bool operator != (iterator const & other) const;
     };
-    // static_assert(std::forward_iterator<iterator>);
-    iterator begin() {return iterator(head);}
-    iterator end() {return iterator(nullptr);}
+    iterator begin();
+    iterator end();
 
     SortedLinkedList();
     void insert(const string & word);
@@ -149,7 +148,8 @@ public:
     void print(ostream & out);
     ~SortedLinkedList();
 };
-ostream & operator << (ostream & out, SortedList & L);
+
+// static_assert(std::forward_iterator<SortedLinkedList::iterator>);
 
 void error(string word, string msg);
 void insert_all_words(int k, string file_name, SortedList & L);
