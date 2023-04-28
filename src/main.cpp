@@ -1,6 +1,6 @@
-#include "sorted_list.h"
+#include "holder.h"
 
 int main()
 {
-    measure_lists("random.txt");
+    measure_holders("../src/words.txt");
 }
