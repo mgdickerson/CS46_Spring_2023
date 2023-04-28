@@ -2,5 +2,5 @@
 
 int main()
 {
-    measure_holders("../src/words.txt");
+    measure_holders("src/words.txt");
 }
