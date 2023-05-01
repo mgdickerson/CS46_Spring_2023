@@ -26,7 +26,7 @@ if (GTest_FOUND)
     gtest/student_gtests.cpp
   )
 
-add_executable(student_gtests ${STUDENT_TEST_FILES} ${SORTED_LIST_SRC_FILES} ${IS_BALANCED_SRC_FILES})
+add_executable(student_gtests ${STUDENT_TEST_FILES} ${HOLDER_SRC_FILES} ${IS_BALANCED_SRC_FILES})
   target_include_directories(student_gtests PRIVATE src ${GTEST_INCLUDE_DIRS})
   target_link_libraries(student_gtests PRIVATE ${GTEST_LIBRARIES})
 endif()
