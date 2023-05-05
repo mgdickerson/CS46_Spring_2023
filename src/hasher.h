@@ -1,6 +1,7 @@
 #ifndef HASHER_H
 #define HASHER_H
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
