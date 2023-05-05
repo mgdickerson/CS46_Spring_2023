@@ -1,6 +1,6 @@
-#include "holder.h"
+#include "hashtable.h"
 
 int main()
 {
-    measure_holders("src/words.txt");
+    measure_hashtables("src/random.txt");
 }
