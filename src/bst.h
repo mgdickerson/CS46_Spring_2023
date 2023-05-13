@@ -57,6 +57,7 @@ ostream & operator << (ostream & out, BST & L);
 
 void error(string word, string msg);
 void insert_all_words(int k, string file_name, BST & L);
+void find_all_words(int k, string file_name, BST & L);
 void remove_all_words(int k, string file_name, BST & L);
 void measure_BST(string file_name, BST & L);
 void measure_BSTs(string input_file);
