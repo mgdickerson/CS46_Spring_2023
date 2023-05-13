@@ -10,10 +10,12 @@ constexpr int NWORDS = 45392;
 struct Node
 {
     string key;
+    int value;
     Node * left, * right;
     int height;
     Node(const string & new_key, Node * new_left=nullptr, Node * new_right=nullptr)
         : key(new_key),
+          value(0),
           left(new_left), right(new_right),
           height(1)
     { }
