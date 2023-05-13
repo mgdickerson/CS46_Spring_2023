@@ -1,12 +1,12 @@
-# ICS 46: Homework 5
+# ICS 46: Homework 6
 
-Welcome to ICS 46 Homework 5! Instructions from this point on will assume the use of `GitHub`.
+Welcome to ICS 46 Homework 6! Instructions from this point on will assume the use of `GitHub`.
 If you are working without github, then copy the [Directory Structure](#directory-structure).
 
 ## Getting Started
 
 To get started with this homework, first you will need to `fetch` changes to your personal repository,
-checkout `hw5`, then push the `hw5` branch to your remote repository.
+checkout `hw6`, then push the `hw6` branch to your remote repository.
 
 ```bash
 # Move into your personal private repository folder:
@@ -15,17 +15,17 @@ cd <PrivateRepositoryFolder>
 # Fetch updates:
 git fetch public
 
-# Checkout hw5 from the public branch:
-git checkout hw5
+# Checkout hw6 from the public branch:
+git checkout hw6
 
 # Push the newly checked out branch to your private repository:
-git push -u origin hw5
+git push -u origin hw6
 ```
 
 ## Directory Structure
 
 If you are not using `GitHub`, and want to use our testing framework, you will need to make a folder
-named `hw5` with the following structure:
+named `hw6` with the following structure:
 
 ```bash
 .
@@ -35,14 +35,18 @@ named `hw5` with the following structure:
 │   ├── gtestmain.cpp
 │   └── student_gtests.cpp
 └── src
-    ├── hasher.h
-    ├── hashtable.cpp
-    ├── hashtable.h
+    ├── avltree.cpp
+    ├── avltree.h
+    ├── bst.cpp
+    ├── bst.h
+    ├── bstree.cpp
+    ├── bstree.h
     ├── main.cpp
     ├── random.txt
-    ├── stats.cpp
-    ├── stats.h
-    └── Timer.h
+    ├── shortrandom.txt
+    ├── shortsorted.txt
+    ├── sorted.txt
+    └── timer.h
 ```
 
 You should copy everything from the `CMakeLists.txt` and `CMakePresets.json` files into your own,
@@ -74,6 +78,6 @@ To run the above targets after compiling them:
 ## Submission
 
 As with previous submissions, you can either submit via `GitHub` by `git commit` and `git push`
-your changes to your private repository, and then submitting the `hw5` branch to `Gradescope`. Or,
-you can upload files directly, namely: `main.cpp`, `Timer.h`, `hasher.h`, `hashtable.h`, `hashtable.cpp`,
-`stats.h`, and `stats.cpp`.
+your changes to your private repository, and then submitting the `hw6` branch to `Gradescope`. Or,
+you can upload files directly, namely: `main.cpp`, `timer.h`, `avltree<.h/.cpp>`, `bst<.h/.cpp>`,
+`bstree<.h/.cpp>`.

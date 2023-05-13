@@ -7,24 +7,29 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(PROVIDED_SRC_FILES
-  src/Timer.h
-  src/hasher.h
+  src/timer.h
 )
 
-set(HASHTABLE_SRC_FILES
-  src/hashtable.h
-  src/hashtable.cpp
+set(AVLTREE_SRC_FILES
+  src/avltree.h
+  src/avltree.cpp
 )
 
-set(STATS_SRC_FILES
-  src/stats.h
-  src/stats.cpp
+set(BST_SRC_FILES
+  src/bst.h
+  src/bst.cpp
+)
+
+set(BSTREE_SRC_FILES
+  src/bstree.h
+  src/bstree.cpp
 )
 
 add_executable(main
   ${PROVIDED_SRC_FILES}
-  ${HASHTABLE_SRC_FILES}
-  ${STATS_SRC_FILES}
+  ${AVLTREE_SRC_FILES}
+  ${BST_SRC_FILES}
+  ${BSTREE_SRC_FILES}
   src/main.cpp
 )
 
@@ -38,8 +43,9 @@ if (GTest_FOUND)
   add_executable(student_gtests 
     ${STUDENT_TEST_FILES}
     ${PROVIDED_SRC_FILES}
-    ${HASHTABLE_SRC_FILES}
-    ${STATS_SRC_FILES}
+    ${AVLTREE_SRC_FILES}
+    ${BST_SRC_FILES}
+    ${BSTREE_SRC_FILES}
   )
   target_include_directories(student_gtests PRIVATE src ${GTEST_INCLUDE_DIRS})
   target_link_libraries(student_gtests PRIVATE ${GTEST_LIBRARIES})
