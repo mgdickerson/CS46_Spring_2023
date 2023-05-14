@@ -50,7 +50,7 @@ struct BST
         // post_order_print(out, root);
     }
 
-    virtual ~BST() = default;
+    virtual ~BST(); // must delete any Nodes in the tree pointed to by root
     BST(const BST & L) = delete;
     BST& operator =(const BST & L) = delete;
 };
