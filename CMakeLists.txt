@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(HW5 CXX)
+project(HW7 CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -10,26 +10,14 @@ set(PROVIDED_SRC_FILES
   src/timer.h
 )
 
-set(AVLTREE_SRC_FILES
-  src/avltree.h
-  src/avltree.cpp
-)
-
-set(BST_SRC_FILES
-  src/bst.h
-  src/bst.cpp
-)
-
-set(BSTREE_SRC_FILES
-  src/bstree.h
-  src/bstree.cpp
+set(SORTER_SRC_FILES
+  src/sorter.h
+  src/sorter.cpp
 )
 
 add_executable(main
   ${PROVIDED_SRC_FILES}
-  ${AVLTREE_SRC_FILES}
-  ${BST_SRC_FILES}
-  ${BSTREE_SRC_FILES}
+  ${SORTER_SRC_FILES}
   src/main.cpp
 )
 
@@ -43,9 +31,7 @@ if (GTest_FOUND)
   add_executable(student_gtests 
     ${STUDENT_TEST_FILES}
     ${PROVIDED_SRC_FILES}
-    ${AVLTREE_SRC_FILES}
-    ${BST_SRC_FILES}
-    ${BSTREE_SRC_FILES}
+    ${SORTER_SRC_FILES}
   )
   target_include_directories(student_gtests PRIVATE src ${GTEST_INCLUDE_DIRS})
   target_link_libraries(student_gtests PRIVATE ${GTEST_LIBRARIES})
