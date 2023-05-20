@@ -39,15 +39,6 @@ public:
     void sort() override;
 };
 
-// "Dutch national flag" algorithm
-class DNFQuickSorter : public Sorter
-{
-public:
-    DNFQuickSorter() : Sorter("DNFQuickSorter") { }
-    static void quicksort(vector<string>& vec, int low, int high);
-    void sort() override;
-};
-
 class HeapSorter : public Sorter
 {
 public:
