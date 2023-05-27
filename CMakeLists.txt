@@ -1,23 +1,18 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(HW7 CXX)
+project(HW8 CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(PROVIDED_SRC_FILES
-  src/timer.h
-)
-
-set(SORTER_SRC_FILES
-  src/sorter.h
-  src/sorter.cpp
+set(GRAPH_SRC_FILES
+  src/graph.h
+  src/graph.cpp
 )
 
 add_executable(main
-  ${PROVIDED_SRC_FILES}
-  ${SORTER_SRC_FILES}
+  ${GRAPH_SRC_FILES}
   src/main.cpp
 )
 
@@ -30,8 +25,7 @@ if (GTest_FOUND)
 
   add_executable(student_gtests 
     ${STUDENT_TEST_FILES}
-    ${PROVIDED_SRC_FILES}
-    ${SORTER_SRC_FILES}
+    ${GRAPH_SRC_FILES}
   )
   target_include_directories(student_gtests PRIVATE src ${GTEST_INCLUDE_DIRS})
   target_link_libraries(student_gtests PRIVATE ${GTEST_LIBRARIES})
