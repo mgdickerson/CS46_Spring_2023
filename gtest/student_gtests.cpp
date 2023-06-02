@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 
-#include "graph.h"
+#include "dijkstras.h"
+#include "ladder.h"
 
 TEST(Replace, Me) {
   EXPECT_TRUE(false);
