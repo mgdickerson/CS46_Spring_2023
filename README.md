@@ -12,14 +12,8 @@ checkout `hw6`, then push the `hw6` branch to your remote repository.
 # Move into your personal private repository folder:
 cd <PrivateRepositoryFolder>
 
-# Fetch updates:
-git fetch public
-
 # Checkout hw6 from the public branch:
 git checkout hw6
-
-# Push the newly checked out branch to your private repository:
-git push -u origin hw6
 ```
 
 ## Directory Structure
