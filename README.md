@@ -12,14 +12,8 @@ checkout `hw3`, then push the `hw3` branch to your remote repository.
 # Move into your personal private repository folder:
 cd <PrivateRepositoryFolder>
 
-# Fetch updates:
-git fetch public
-
 # Checkout hw3 from the public branch:
 git checkout hw3
-
-# Push the newly checked out branch to your private repository:
-git push -u origin hw3
 ```
 
 ## Directory Structure
