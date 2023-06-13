@@ -12,14 +12,8 @@ checkout `hw2`, then push the `hw2` branch to your remote repository.
 # Move into your personal private repository folder:
 cd <PrivateRepositoryFolder>
 
-# Fetch updates:
-git fetch public
-
 # Checkout hw2 from the public branch:
 git checkout hw2
-
-# Push the newly checked out branch to your private repository:
-git push -u origin hw2
 ```
 
 ## Directory Structure
