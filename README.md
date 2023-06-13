@@ -12,14 +12,8 @@ checkout `hw8`, then push the `hw8` branch to your remote repository.
 # Move into your personal private repository folder:
 cd <PrivateRepositoryFolder>
 
-# Fetch updates:
-git fetch public
-
 # Checkout hw8 from the public branch:
 git checkout hw8
-
-# Push the newly checked out branch to your private repository:
-git push -u origin hw8
 ```
 
 ## Directory Structure
