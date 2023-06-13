@@ -1,6 +1,6 @@
-# ICS 45C:
+# ICS 46:
 
-Welcome to the ICS 45C GitHub landing page! This GitHub project will contain all of the project
+Welcome to the ICS 46 GitHub landing page! This GitHub project will contain all of the project
 setup material you need for this class. This `main` branch will introduce the tools we will be
 using in this class in brief detail. To access instructions for a specific homework, use the
 branch drop down menu above to select the homework you wish to work on!
@@ -63,7 +63,7 @@ And then in the terminal, type:
 git clone <YourLinkHere>
 ```
 
-This will add the folder `CS45C_Spring_2023` to your current working directory, which you can see by
+This will add the folder `CS46_Spring_2023` to your current working directory, which you can see by
 typing the `ls` command. Now you are ready to move on to `Homework 0`! 
 
 ## CMake
